@@ -8,6 +8,8 @@ use Gtk3 '-init';
 
 use Glib qw/TRUE FALSE/;
 
+# Some changes 
+
 sub quit_function {
 	say "Exiting Gtk3";
 	Gtk3->main_quit;
