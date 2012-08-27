@@ -8,7 +8,7 @@ use Gtk3 '-init';
 
 use Glib qw/TRUE FALSE/;
 
-## DECLARATIONS
+#### DECLARATIONS
 
 my $window = Gtk3::Window->new('toplevel');
 $window->set_title("My Title");
@@ -36,7 +36,7 @@ $vbox->add($label);
 $window->add($vbox);
 $window->show_all;
 
-## FUNCTIONS
+#### FUNCTIONS
 
 sub quit_function {
 	say "Exiting Gtk3";
