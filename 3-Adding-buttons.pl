@@ -28,8 +28,11 @@ my $button2 = Gtk3::Button->new("Another Quit");
 $button2->signal_connect (clicked => \&quit_function);
 
 my $hbox = Gtk3::Box->new("horizontal", 5);
+
 $hbox->pack_start($button1, TRUE, TRUE, 0);
 $hbox->pack_start($button2, TRUE, TRUE, 0);
+
+$hbox->set_homogeneous (TRUE);
 
 $window->add($hbox);
 

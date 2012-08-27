@@ -21,11 +21,16 @@ my $button1 = Gtk3::Button->new("Quit");
 $button1->signal_connect (clicked => \&quit_function);
 
 my $button2 = Gtk3::Button->new("Say Hello");
-$button2->signal_connect (clicked => \&say_hello);
+$button2->signal_connect (clicked => \&say_something, "Hello");
+
+my $button3 = Gtk3::Button->new("Say Goodbye");
+$button3->signal_connect (clicked => \&say_something, "Goodbye");
 
 my $hbox = Gtk3::Box->new("horizontal", 5);
+$hbox->set_homogeneous (TRUE);
 $hbox->pack_start($button1, TRUE, TRUE, 0);
 $hbox->pack_start($button2, TRUE, TRUE, 0);
+$hbox->pack_start($button3, TRUE, TRUE, 0);
 
 my $vbox = Gtk3::Box->new("vertical", 5);
 $vbox->add($hbox);
@@ -44,8 +49,9 @@ sub quit_function {
 	return FALSE;
 }
 
-sub say_hello {
-    $label->set_label("Yes - connected");
+sub say_something {
+    my ($button, $userdata) = @_;
+    $label->set_label( $userdata );
     return TRUE;
 }
 
