@@ -4,15 +4,36 @@ use strict;
 use warnings;
 use diagnostics;
 use feature ':5.14';
+
+use Cairo::GObject;
 use Gtk3 '-init';
-use Cairo;
+use autodie;
 
 my $window = Gtk3::Window->new('toplevel');
-$window->set_title("My Title");
-$window->set_position("mouse");
-$window->set_default_size(400, 50);
-$window->set_border_width(20);
-$window->signal_connect (delete_event => sub { Gtk3->main_quit });
+$window->signal_connect( 'destroy' => sub { Gtk3->main_quit } );
 
+my $drawable = Gtk3::DrawingArea->new;
+
+$drawable->signal_connect(
+    'draw' => sub {
+        my ( $widget, $context ) = @_;
+
+        my $alloc = $widget->get_allocation;
+
+        $context->move_to( rand( $alloc->{width} ), rand( $alloc->{height} ) );
+        $context->rel_line_to( 10, 10 );
+        $context->stroke;
+        sleep (1);
+        $context->line_to( 30, 10 );
+        $context->stroke;
+        sleep (1);
+        $context->line_to( 10, 30 );
+        $context->stroke;
+
+    }
+);
+
+$window->add($drawable);
 $window->show_all;
+
 Gtk3->main;
