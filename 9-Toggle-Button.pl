@@ -8,7 +8,7 @@ use Gtk3 '-init';
 use Glib qw/TRUE FALSE/;
 
 my $window = Gtk3::Window->new('toplevel');
-$window->set_title("Spinbox Example");
+$window->set_title("Spin and toggle Example");
 $window->set_position("mouse");
 $window->set_default_size(250, 100);
 $window->set_border_width(5);
@@ -28,19 +28,19 @@ my $zero_button = Gtk3::Button->new('Zero');
 $hbox->pack_start($zero_button, FALSE, FALSE, 0);
 $zero_button->signal_connect ( clicked => \&zero );
 
-my $check_accuracy = Gtk3::CheckButton->new_with_label('High accuracy');
-$hbox->pack_start($check_accuracy, FALSE, FALSE, 0);
-$check_accuracy->signal_connect ( toggled => \&toggle_accuracy );
+my $toggle_accuracy = Gtk3::ToggleButton->new_with_label('High accuracy');
+$hbox->pack_start($toggle_accuracy, FALSE, FALSE, 0);
+$toggle_accuracy->signal_connect ( toggled => \&toggle_accuracy );
 
 my $hbox2 = Gtk3::Box->new("horizontal", 5);
 $vbox->pack_start($hbox2, FALSE, FALSE, 0);
 
 my $update_button = Gtk3::Button->new('Update');
-$hbox2->pack_start($update_button, FALSE, FALSE, 0);
+$hbox->pack_start($update_button, FALSE, FALSE, 0);
 $update_button->signal_connect ( clicked => \&update );
 
 my $label = Gtk3::Label->new("No Value");
-$hbox2->pack_start($label, FALSE, FALSE, 0);
+$hbox->pack_start($label, FALSE, FALSE, 0);
 
 
 $window->show_all;
