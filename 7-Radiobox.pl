@@ -1,11 +1,5 @@
 #! /usr/bin/perl
 
-#
-#	This example borrows from the
-#	The Python GTK+ 3 Tutorial
-#	http://python-gtk-3-tutorial.readthedocs.org/en/latest/index.html
-#
-
 use strict;
 use warnings;
 use diagnostics;
