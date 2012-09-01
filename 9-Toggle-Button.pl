@@ -42,7 +42,6 @@ $update_button->signal_connect ( clicked => \&update );
 my $label = Gtk3::Label->new("No Value");
 $hbox->pack_start($label, FALSE, FALSE, 0);
 
-
 $window->show_all;
 Gtk3->main;
 
