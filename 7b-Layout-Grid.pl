@@ -26,10 +26,10 @@ my $toggle6 = Gtk3::ToggleButton->new_with_label('Six');
 
 $grid->add($toggle1);
 $grid->attach($toggle2, 1, 0, 2, 1);
-$grid->attach_next_to($toggle3, $toggle1, "bottom", 1, 2);
-$grid->attach_next_to($toggle4, $toggle3, "right", 2, 1);
+$grid->attach_next_to($toggle3, $toggle1, 'bottom', 1, 2);
+$grid->attach_next_to($toggle4, $toggle3, 'right', 2, 1);
 $grid->attach($toggle5, 1, 2, 1, 1);
-$grid->attach_next_to($toggle6, $toggle5, "right", 1, 1);
+$grid->attach_next_to($toggle6, $toggle5, 'GTK_POS_RIGHT', 1, 1);
 
 $window->show_all;
 Gtk3->main;
