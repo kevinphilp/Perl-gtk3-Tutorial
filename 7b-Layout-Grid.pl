@@ -24,9 +24,6 @@ my $toggle4 = Gtk3::ToggleButton->new_with_label('Four');
 my $toggle5 = Gtk3::ToggleButton->new_with_label('Five');
 my $toggle6 = Gtk3::ToggleButton->new_with_label('Six');
 
-#attach (Widget child, gint32 left, gint32 top, gint32 width, gint32 height) : none
-#void  gtk_grid_attach_next_to   (GtkGrid *grid, GtkWidget *child, GtkWidget *sibling, GtkPositionType side, gint width, gint height);
-
 $grid->add($toggle1);
 $grid->attach($toggle2, 1, 0, 2, 1);
 $grid->attach_next_to($toggle3, $toggle1, "bottom", 1, 2);
