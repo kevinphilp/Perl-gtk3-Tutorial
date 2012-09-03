@@ -1,4 +1,6 @@
 Perl-gtk3-Tutorial
 ==================
 
-Some notes on using Gtk3 with Perl put together to help my son and I learn some Perl/Gtk3. I am putting these notes up in the hope they will be of some use to other people.
+A basic introduction to using the Gtk3 toolkit with the Perl bindings. This tutorial was written to help my son and I learn Gtk3/Perl. The tutorial takes a series of standard widgets and presents them with a full, working example and an explanation of how it works.
+
+We are posting this on the internet in case other people find it useful.
