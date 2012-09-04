@@ -63,4 +63,5 @@ sub cb_toggled {
 		}
 		$entry->set_icon_from_stock('secondary', $stock_id);
 	}
+	return FALSE;
 }

@@ -40,5 +40,6 @@ sub rb_toggled {
 	} else {
 		say " set OFF";
 	}
+	return FALSE;
 }
 

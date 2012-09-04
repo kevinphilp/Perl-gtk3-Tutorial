@@ -38,4 +38,5 @@ sub toggle {
 			$spinner->stop;
 			$toggle1->set_label("Spin");
 	}
+	return FALSE;
 }

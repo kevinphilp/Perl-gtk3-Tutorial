@@ -49,6 +49,7 @@ Gtk3->main;
 sub zero {
 	my ($widget, $data) = @_;
     $spin->set_value(0);
+    return FALSE;
 }
 
 sub toggle_accuracy{
@@ -59,8 +60,10 @@ sub toggle_accuracy{
     } else {
             $spin->set_digits(1);
     }
+	return FALSE;
 }
 
 sub update {
 	$label->set_label( $spin->get_value );
+	return FALSE;
 }

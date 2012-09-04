@@ -52,7 +52,7 @@ sub quit_function {
 sub say_something {
     my ($button, $userdata) = @_;
     $label->set_label( $userdata );
-    return TRUE;
+	return FALSE;
 }
 
 Gtk3->main;

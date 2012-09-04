@@ -59,7 +59,7 @@ sub say_something {
     } elsif ($userdata eq "weird") {
         $label->set_markup('<span foreground="cyan" background="yellow" size="x-large"><b>Weird</b></span>');
     }
-    return TRUE;
+	return FALSE;
 }
 
 Gtk3->main;

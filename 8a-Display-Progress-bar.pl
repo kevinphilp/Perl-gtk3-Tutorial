@@ -49,9 +49,10 @@ sub showtext {
 	my $text = undef;
 	if ( $widget->get_active ) {
 		$text = "some text";
-	} 
+	}
 	$progress->set_text( $text );
 	$progress->set_show_text( $widget->get_active );
+	return FALSE;
 }
 
 sub showpercent {
@@ -59,13 +60,15 @@ sub showpercent {
 	my $show = $widget->get_active;
 	$progress->set_text( undef );
 	$progress->set_show_text( $show );
+	return FALSE;
 }
 
 sub invert {
 	my ($widget, $data) = @_;
 	$progress->set_inverted( $widget->get_active );
+	return FALSE;
 }
-	
+
 sub update {
 	if ( $progress->get_fraction >= 1 ) {
 		$increment = -0.01;
