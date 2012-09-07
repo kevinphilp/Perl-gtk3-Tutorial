@@ -10,7 +10,7 @@ use Cairo::GObject;
 use constant PI 	=> 3.1415927;
 
 my $window = Gtk3::Window->new('toplevel');
-$window->set_title("Grid Example");
+$window->set_title("Cairo Basics");
 $window->set_position("mouse");
 $window->set_default_size(600, 400);
 $window->set_border_width(5);
@@ -51,7 +51,7 @@ sub cairo_draw {
  		$context->arc( 220, 150, 100, 0, PI * 2	);
  		$context->set_line_width(10);
  		$context->stroke_preserve;
- 		$context->set_source_rgba(0.9, 0.2, 0.2, 0.2); 
+ 		$context->set_source_rgba(0.9, 0.2, 0.2, 0.2);
  		$context->fill;
 
  		# Segment
@@ -78,16 +78,16 @@ sub cairo_draw {
 		$context->move_to(50, 50);
  		$context->line_to(550, 350);
  		$context->stroke;
- 		
+
 		# Curve
 		$context->set_line_width(10);
-		$context->set_source_rgba(0.9, 0.9, 0, 0.9);		
+		$context->set_source_rgba(0.9, 0.9, 0, 0.9);
  		$context->move_to(50, 50);
  		$context->curve_to( 100, 250, 250, 150, 550, 350);
  		$context->stroke;
 
 		# Text
-		$context->set_source_rgba(0.0, 0.9, 0.9, 0.7);		
+		$context->set_source_rgba(0.0, 0.9, 0.9, 0.7);
  		$context->select_font_face( "Sans", "normal", "bold" );
  		$context->set_font_size( 50 );
  		$context->move_to(220, 50);
@@ -98,7 +98,7 @@ sub cairo_draw {
  		$context->text_path( "pretty" );
 		$context->set_source_rgba(0.9, 0, 0.9, 0.7);
 		$context->fill_preserve;
-		$context->set_source_rgba(0.2, 0.1, 0.1, 0.7);			
+		$context->set_source_rgba(0.2, 0.1, 0.1, 0.7);
  		$context->set_line_width( 2 );
  		$context->stroke;
 
