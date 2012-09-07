@@ -102,7 +102,15 @@ sub cairo_draw {
  		$context->set_line_width( 2 );
  		$context->stroke;
 
- 		# Gradients
+ 		 # Linear Gradients
+ 		my $pattern2 = Cairo::LinearGradient->create(520, 20, 570, 320);
+ 		$pattern2->add_color_stop_rgba(0, 0, 0.7, 1, 0.5);
+ 		$pattern2->add_color_stop_rgba(1, 0, 0, 0.5, 0.95);
+ 		$context->set_source( $pattern2 );
+ 		$context->rectangle( 520, 20, 570, 320);
+ 		$context->fill;
+
+ 		# Radial Gradients
  		my $pattern = Cairo::RadialGradient->create(40, 220, 25, 60, 240, 150);
  		$pattern->add_color_stop_rgba(0, 1, 0.7, 1, 0.95);
  		$pattern->add_color_stop_rgba(1, 0, 0, 0.5, 0.95);
